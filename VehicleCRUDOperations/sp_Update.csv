@@ -1,0 +1,44 @@
+﻿create procedure sp_Vehicle_Update
+
+@Id int,
+
+@VRN nvarchar(20),
+
+@VehicleTypeId smallint,
+
+@Make nvarchar(30),
+
+@Model nvarchar(30) ,
+
+@FuelTypeId smallint,
+
+@EngineSize varchar(10),
+
+@StatusId smallint
+
+as 
+
+begin
+
+update Vehicle set 
+
+VRN=@VRN,
+
+VehicleTypeId=@VehicleTypeId,
+
+Make=@Make,
+
+Model=@Model,
+
+FuelTypeId=@FuelTypeId,
+
+EngineSize=@EngineSize,
+
+StatusId=@StatusId
+
+where Id=@Id
+
+end
+
+
+

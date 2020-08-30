@@ -1,0 +1,11 @@
+﻿create procedure sp_Vehicle_id
+
+@Id int
+
+as 
+
+begin
+
+select * from Vehicle where Id=@Id
+
+end

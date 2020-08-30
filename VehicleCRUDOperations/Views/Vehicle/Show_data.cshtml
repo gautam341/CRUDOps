@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show_data</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE =edge">
+    <meta name="viewport" content="width =device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class=" table-responsive">
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>VRN</th>
+                    <th>VehicleTypeId</th>
+                    <th>Make</th>
+                    <th>Model</th>
+                    <th>FuelTypeId</th>
+                    <th>EngineSize</th>
+                    <th>StatusId</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (System.Data.DataRow dr in ViewBag.veh.Rows)
+                    {
+
+                        <tr>
+                            <td>@dr["Id"]</td>
+                            <td>@dr["VRN"]</td>
+                            <td>@dr["VehicleTypeId"]</td>
+                            <td>@dr["Make"]</td>
+                            <td>@dr["Model"]</td>
+                            <td>@dr["FuelTypeId"]</td>
+                            <td>@dr["EngineSize"]</td>
+                            <td>@dr["StatusId"]</td>
+                            <td>
+                                <a href="/Vehicle/Update_record?id=@dr["Id"]">Update</a>
+                                <a href="/Vehicle/Delete_record?id=@dr["Id"]">Delete</a>
+                            </td>
+
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+    @{
+        if (TempData["msg"] != null)
+        {
+            <script>
+                alert(TempData["msg"]);
+            </script>
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update_record</title>
+</head>
+<body>
+    <div>
+        @{
+            foreach (System.Data.DataRow dr in ViewBag.vehrecord.Rows)
+            {
+                <form method="post">
+                    @*<div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right">Id</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="Id" class="col-xs-10 col-sm-8" />
+                            </div>
+                        </div>*@
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">VRN</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["VRN"]" name="VRN" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">VehicleTypeId</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["VehicleTypeId"]" name="VehicleTypeId" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">Make</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["Make"]" name="Make" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">Model</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["Model"]" name="Model" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">FuelTypeId </label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["FuelTypeId"]" name="FuelTypeId" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">EngineSize </label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["EngineSize"]" name="EngineSize" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label no-padding-right">StatusId</label>
+                        <div class="col-sm-9">
+                            <input type="text" value="@dr["StatusId"]" name="StatusId" class="col-xs-10 col-sm-8"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="submit" value="Submit" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            }
+        }
+
+    </div>
+   
+</body>
+</html>

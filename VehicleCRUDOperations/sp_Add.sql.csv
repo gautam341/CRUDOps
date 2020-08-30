@@ -1,0 +1,30 @@
+﻿Create procedure sp_Vehicle_Add
+
+@VRN nvarchar(20) ,
+
+@VehicleTypeId smallint ,
+
+@Make nvarchar(30) ,
+
+@Model nvarchar(30) ,
+
+@FuelTypeId smallint,
+
+@EngineSize varchar(10),
+
+@StatusId smallint
+
+as
+
+begin
+
+insert into Vehicle(VRN,VehicleTypeId,Make,Model,FuelTypeId,EngineSize,StatusId) values(@VRN,@VehicleTypeId,@Make,
+
+@Model,@FuelTypeId,@EngineSize,@StatusId)
+
+end
+
+
+
+
+

@@ -1,0 +1,9 @@
+﻿create procedure sp_Vehicle_All
+
+as 
+
+begin
+
+select * from Vehicle 
+
+end
